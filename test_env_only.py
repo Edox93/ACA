@@ -1,5 +1,8 @@
-user_input = input("please input")
+'''user_input = input("please input")
 if user_input.find('.') == '.':
     print('it is float')
 else:
-    print('it is not float')
+    print('it is not float')'''
+
+user_input = '4'
+print(type(user_input))
