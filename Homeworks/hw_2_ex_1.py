@@ -9,7 +9,7 @@ while True:
                 if digit % every_digit == 0:
                     sum_divisible = sum_divisible + every_digit
             if sum_divisible == digit:
-#           if perfect_count is True:
+#            if perfect_count is True:
                 print(sum_divisible)
 #            if perfect_count is False:
 #                print('No perfect numbers in this range')
