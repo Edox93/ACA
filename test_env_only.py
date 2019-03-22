@@ -4,5 +4,5 @@ if user_input.find('.') == '.':
 else:
     print('it is not float')'''
 
-user_input = '4'
-print(type(user_input))
+user_input = 4
+print(len(user_input))
