@@ -1,17 +1,23 @@
-while True:
-    operator_input = input('insert an operator:')
-    operand1_input = input('insert an operand 1:')
-    operand2_input = input('insert an operand 2:')
-    operands = ['+', 'add', '-', 'sub', '*', 'mul', '/', 'div']
-    if operator_input in operand_add:
-        if
-        print(int(operand1_input) + int(operand2_input))
-    elif operator_input in operand_sub:
-        print(int(operand1_input) - int(operand2_input))
-    elif operator_input in operand_mul:
-        print(int(operand1_input) * int(operand2_input))
-    elif operator_input in operand_div:
-        print(int(operand1_input) / int(operand2_input))
+def f_calc(operator, operand1, operand2):
+    if type(operand1) is int or type(operand1) is float:
+        if type(operand2) is int or type(operand2) is float:
+            if operator == '+' or operator == "add":
+                return operand1 + operand2
+            elif operator == '-' or operator == "sub":
+                return operand1 - operand2
+            elif operator == '*' or operator == "mul":
+                return operand1 * operand2
+            elif operator == '/' or operator == "div":
+                return operand1 // operand2
+            else:
+                return 'invalid operator'
+        else:
+            return "invalid operand1"
     else:
-        print('invalid input')
+        return "invalid operand1"
 
+
+operator_out = input("please insert an operator:")
+operand1_out = input("please insert an operand1:")
+operand2_out = input("please insert an operand2:")
+print(f_calc(operator_out, operand1_out, operand2_out))

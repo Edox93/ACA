@@ -1,8 +1,11 @@
-'''user_input = input("please input")
-if user_input.find('.') == '.':
-    print('it is float')
-else:
-    print('it is not float')'''
+a = input()
 
-user_input = 4
-print(len(user_input))
+if a.isnumeric():
+    if a.isdigit():
+        a = int(a)
+        print('int', a)
+    else:
+        a = float(a)
+        print('float', a)
+else:
+    print("input is not int or float")
