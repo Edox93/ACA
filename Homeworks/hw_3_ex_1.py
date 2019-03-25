@@ -7,8 +7,4 @@ for instance in provided_list:
         for list_int in instance:
             if type(list_int) == int:
                 integer_list.append(list_int)
-#    elif type(instance) == tuple:
-#        for tuple_int in instance:
-#            if type(tuple_int) == int:
-#                integer_list.append(tuple_int)
 print('the count of integers in provided_list is:', len(integer_list))
