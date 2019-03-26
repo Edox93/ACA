@@ -1,11 +1,8 @@
-countries = (
-    ("Germany", 80.2, (("Berlin", 3.326), ("Hamburg", 1.718))),
-    ("France", 66, (("Paris", 2.2), ("Marsel", 1.6)))
-)
+text_list = list()
+text_string = str()
+text_dict = dict()
 
-for country in countries:
-    countryName, countryPopulation, cities = country
-    print("\nCountry: {}  population: {}".format(countryName, countryPopulation))
-    for city in cities:
-        cityName, cityPopulation = city
-        print("City: {}  population: {}".format(cityName, cityPopulation))
+
+with open('text.txt') as file:
+    data = file.read().replace('\n', '')
+    print(data)
