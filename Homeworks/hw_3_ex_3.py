@@ -9,6 +9,7 @@ with open('text.txt') as file:
             result[word] = 1
         else:
             result[word] += 1
-Counter = Counter(result)
-first_three_frequent_words = Counter.most_common(3)
+
+frequent_words = Counter(result)
+first_three_frequent_words = frequent_words.most_common(3)
 print(first_three_frequent_words)
