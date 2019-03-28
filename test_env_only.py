@@ -1,4 +1,1 @@
-from collections import defaultdict
-
-a = defaultdict(str)
-
+print(9/5)
