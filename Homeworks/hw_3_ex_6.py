@@ -1,20 +1,31 @@
-# Validate brackets in any given expression, for example:
-# ((){[()]}[]) is valid
-# 5 - (6 + [4 5]/8) + {4 - 5 (18 - 4)} is valid
-# ([)]{()[}] is invalid
-# (a * 2 - (b + [4 -8)] + {12 / (34 - 56)}) is invalid
-my_string = '(a * 2 - (b + [4 -8)] + {12 / (34 - 56)})'
-brackets = ['(', ')', '[', ']', '{', '}']
-my_sorted_brackets = []
-for i in my_string:
-    if i in brackets:
-        my_sorted_brackets.append(i)
-print(my_sorted_brackets)
-if my_sorted_brackets[0] == brackets[0] and my_sorted_brackets[-1] == brackets[1]:
-    print('it is ( )')
-if my_sorted_brackets[0] == brackets[2] and my_sorted_brackets[-1] == brackets[3]:
-    print('it is [ ]')
-if my_sorted_brackets[0] == brackets[4] and my_sorted_brackets[-1] == brackets[5]:
-    print('it is { }')
+def f_cls_to_kvn(celsius):
+    kelvin = celsius + 273.15
+    return kelvin
 
 
+def f_cls_to_fht(celsius):
+    fahrenheit = celsius * (9 / 5) + 32
+    return fahrenheit
+
+
+def f_kvn_to_cls(kelvin):
+    celsius = kelvin - 273.15
+    return celsius
+
+
+def f_kvn_to_fht(kelvin):
+    fahrenheit = kelvin * (9 / 5) - 459.67
+    return fahrenheit
+
+
+def f_fht_to_cls(fahrenheit):
+    celsius = (fahrenheit - 32) * (5 / 9)
+    return celsius
+
+
+def f_fht_to_kvn(fahrenheit):
+    kelvin = (fahrenheit + 459.67) * (5 / 9)
+    return kelvin
+
+
+user_input = input('Please input a temperature: ')
