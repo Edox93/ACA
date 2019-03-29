@@ -7,11 +7,13 @@ with open('text.txt') as file:
             result[word] = 1
         else:
             result[word] += 1
-    print(result)
 
-    sorted_result = sorted(result.items(), key=lambda x: x[1], reverse=True)
+    for i in sorted(result):
+        print((i, result[i]), end=" ")
 
-    print(sorted_result[0:3])
+    # sorted_result = sorted(result.items(), key=lambda x: x[1], reverse=True)
+
+    # print(sorted_result[0:3])
 
 
 
