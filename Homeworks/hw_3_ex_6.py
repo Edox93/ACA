@@ -29,3 +29,25 @@ def f_fht_to_kvn(fahrenheit):
 
 
 user_input = input('Please input a temperature: ')
+temp_args = ('F', 'K', 'C')
+to_convert = input('Convert to. for (C) please input C for (F) -> F, and for (K) -> K: ')
+user_input_list = []
+str_from_user_input_list = ''
+
+user_input = user_input.replace(' ', '').upper()
+if user_input[-1] in temp_args and user_input[0].isdigit() and user_input[-2].isdigit():
+    for str_el in user_input:
+        user_input_list.append(str_el)
+else:
+    print('invalid temperature input')
+user_input_list.insert(-1, '')
+
+#for i in range(len(user_input_list) - 2):
+str_from_user_input_list = ''.join(str(e) for e in user_input_list)
+str_from_user_input_list = str_from_user_input_list[:-1] + str_from_user_input_list[5:]
+print(str_from_user_input_list)
+if str_from_user_input_list.isdigit():
+    print(type(int(str_from_user_input_list)))
+elif str_from_user_input_list.isnumeric():
+    print(type(float(str_from_user_input_list)))
+
