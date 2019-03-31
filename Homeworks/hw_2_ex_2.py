@@ -1,40 +1,33 @@
-def f_calc(operator, operand1, operand2):
-    if type(operand1) is int or type(operand1) is float and type(operand2) is int or type(operand2) is float:
-        if operator == '+' or operator == "add":
-            return operand1 + operand2
-        elif operator == '-' or operator == "sub":
-            return operand1 - operand2
-        elif operator == '*' or operator == "mul":
-            return operand1 * operand2
-        elif operator == '/' or operator == "div":
-            return operand1 // operand2
-        else:
-            return 'invalid operator'
-    else:
-        return "invalid operand1 or operand2"
+def add(operator, operand1, operand2):
+    if operator == '+' or operator == 'add':
+        add_result = operand1 + operand2
+        return add_result
 
 
-operator_out = input("please insert an operator:")
+def sub(operator, operand1, operand2):
+    if operator == '-' or operator == 'sub':
+        sub_result = operand1 - operand2
+        return sub_result
 
-#if operator_out == '+' or operator_out == 'add'
 
-operand1_out = input("please insert an operand1:")
-if not operand1_out.isalpha():
-    if operand1_out.isnumeric():
-        i = int(operand1_out)
-        print("int")
-    else:
-        f = float(operand1_out)
-        print("float")
+def mul(operator, operand1, operand2):
+    if operator == '*' or operator == 'mul':
+        mul_result = operand1 - operand2
+        return mul_result
 
-operand2_out = input("please insert an operand2:")
-if not operand2_out.isalpha():
-    if operand2_out.isnumeric():
-        i = int(operand2_out)
-        print("int")
-    else:
-        f = float(operand2_out)
-        print("float")
 
-#
-#print(f_calc(operator_out, operand1_out, operand2_out))
+def div(operator, operand1, operand2):
+    if operator == '/' or operator == 'div':
+        div_result = operand1 - operand2
+        return div_result
+
+
+user_input = input('please input like this expression: operator operand operand:').split()
+operators_list = ['+', 'add', '-', 'sub', '*', 'mul', '/', 'div']
+if len(user_input) != 3 and user_input[0] not in operators_list:
+    print('Invalid operator and count of inputs')
+
+    if user_input[0] == user_input[1] or user_input[0] == user_input[2]:
+        print('operator cannot be operand or vice versa')
+
+
