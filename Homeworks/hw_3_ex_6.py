@@ -30,7 +30,7 @@ def f_fht_to_kvn(fahrenheit):
 
 print('Supported temperature formats: 36.6 C | 97.88 F | 309.75 K')
 user_input = input('Temperature: ').upper()
-valid_temperature_formats = ['F', 'K', 'C']
+valid_temperature_formats = ('F', 'K', 'C')
 user_input_list = user_input.split()
 convert_to = input('Convert to (C(elsius) | K(elvin) | F(ahrenheit)): ').upper()
 

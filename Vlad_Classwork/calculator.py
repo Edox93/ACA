@@ -52,7 +52,7 @@ if tokens[0] == '+' or tokens[0] == 'add':
 elif tokens[0] == '-' or tokens[0] == 'sub':
     print(tokens[1] - tokens[2])
 
-print(OPERATIONS[tokens[0]](tokens[1], tokens[2]))
+#print(OPERATIONS[tokens[0]](tokens[1], tokens[2]))
 globals()[STR_OPS[tokens[0]]](tokens[1], tokens[2])
 
-print(eval(f'{tokens[1]} {tokens[0]} {tokens[2]}'))
+#print(eval(f'{tokens[1]} {tokens[0]} {tokens[2]}'))
