@@ -3,18 +3,26 @@
 # 5 - (6 + [4 5]/8) + {4 - 5 (18 - 4)} is valid
 # ([)]{()[}] is invalid
 # (a * 2 - (b + [4 -8)] + {12 / (34 - 56)}) is invalid
-my_string = '(a * 2 - (b + [4 -8)] + {12 / (34 - 56)})'
-brackets = ['(', ')', '[', ']', '{', '}']
-my_sorted_brackets = []
-for i in my_string:
-    if i in brackets:
-        my_sorted_brackets.append(i)
-print(my_sorted_brackets)
-if my_sorted_brackets[0] == brackets[0] and my_sorted_brackets[-1] == brackets[1]:
-    print('it is ( )')
-if my_sorted_brackets[0] == brackets[2] and my_sorted_brackets[-1] == brackets[3]:
-    print('it is [ ]')
-if my_sorted_brackets[0] == brackets[4] and my_sorted_brackets[-1] == brackets[5]:
-    print('it is { }')
+from sys import exit
 
+user_input = input('please enter your expression: ')
+brackets_left = ('(', '[', '{')
+brackets_right = (')', ']', '}')
+new_brackets = []
+for i in user_input:
+    if i in brackets_left:
+        new_brackets.append(i)
+    elif i in brackets_right:
+        bracketPosition = brackets_right.index(i)
+        if len(new_brackets) > 0 and new_brackets[len(new_brackets) - 1] == brackets_left[bracketPosition]:
+            new_brackets.pop()
+        else:
+            print("Invalid")
+            exit()
 
+if len(new_brackets) == 0:
+    print("Valid")
+
+# {([])]}{}
+# ([]{}{}())
+# ({}[)]()
