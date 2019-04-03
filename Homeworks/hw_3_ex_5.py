@@ -9,12 +9,12 @@ user_input = input('please enter your expression: ')
 brackets_left = ('(', '[', '{')
 brackets_right = (')', ']', '}')
 new_brackets = []
-for i in user_input:
-    if i in brackets_left:
-        new_brackets.append(i)
-    elif i in brackets_right:
-        bracketPosition = brackets_right.index(i)
-        if len(new_brackets) > 0 and new_brackets[len(new_brackets) - 1] == brackets_left[bracketPosition]:
+for bracket in user_input:
+    if bracket in brackets_left:
+        new_brackets.append(bracket)
+    elif bracket in brackets_right:
+        bracket_index = brackets_right.index(bracket)  # 0, 1, 2
+        if len(new_brackets) > 0 and new_brackets[len(new_brackets) - 1] == brackets_left[bracket_index]:
             new_brackets.pop()
         else:
             print("Invalid")
@@ -23,6 +23,23 @@ for i in user_input:
 if len(new_brackets) == 0:
     print("Valid")
 
+
+# Line17   -->   length - 1 == last iterated element for compaire
+
 # {([])]}{}
 # ([]{}{}())
 # ({}[)]()
+
+# {([])]}{}
+# {()]}{}
+# {]}{}
+# {]}
+# False
+
+# ({[()]}[])
+# ({[]}[])
+# ({}[])
+# ([])
+# ()
+#
+# True

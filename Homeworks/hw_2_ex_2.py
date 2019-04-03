@@ -39,7 +39,7 @@ for input_str in range(1, 3):
         print('Invalid number at position', input_str)
 
 
-if user_input[0] == operators_list[0] or user_input[0] == operators_list[1]:
+if user_input[0] == operators_list or user_input[0] == operators_list[1]:
     print(add(user_input[1], user_input[2]))
 if user_input[0] == operators_list[2] or user_input[0] == operators_list[3]:
     print(add(user_input[1], user_input[2]))
