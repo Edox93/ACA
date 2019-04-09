@@ -1,8 +1,6 @@
-def string_encoder(input_string):
-    bin_string = ' '.join(format(ord(x), 'b') for x in input_string)
-    return bin_string
+my_int = [1, 2, 3, 4, 5]
+a = map((lambda x: x ** 2), my_int)
+print(list(a))
 
-
-print(string_encoder('acuna matata'))
-
-print(string_encoder('acuna matata')'a string'.decode('ascii')
+name = 'alyo'
+print('hello {name}'.format(name = name))
