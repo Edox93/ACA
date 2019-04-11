@@ -6,10 +6,12 @@ def text_to_braille(text_input):
             charBraille = ''
             for f in v:
                 if f == 1:
-                    charBraille += 'o'
+                    charBraille = 'o'
                 else:
-                    charBraille += '-'
-            print(charBraille)
+                    charBraille = '-'
+                print(charBraille, end='')
+            print('')
+        # print('', end='')
 
     return result
 
