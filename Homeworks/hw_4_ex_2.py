@@ -2,22 +2,17 @@ import binascii
 
 
 def string_encoder(input_string: str) -> str:
-    bin_string = ''.join(format(ord(x), 'b') for x in input_string)
+    bin_string = bin(int.from_bytes(input_string.encode(), 'big')).strip('0b')
     return bin_string
 
 
-encoded_string = string_encoder('h')
-print(encoded_string)
+def string_decoder(input_string: str) -> str:
+    bin_string = int(input_string, 2)
+    return bin_string.to_bytes((bin_string.bit_length() + 7) // 8, 'big').decode()
 
 
-encoded_string = int(encoded_string, 2)
-decoded_to_ascii = binascii.hexlify(encoded_string)
-
-print(decoded_to_ascii)
-
-a = decoded_to_ascii.decode('utf-8')
-print(a)
-
-ob
-
-
+if __name__ == '__main__':
+    user_input = input('please input your string for decoding to binary: ')
+    print(string_encoder(user_input))
+    user_input2 = input('please input your binary string for decoding: ')
+    print(string_decoder(user_input2))
