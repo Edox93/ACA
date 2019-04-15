@@ -2,12 +2,15 @@ import binascii
 
 
 def string_encoder(input_string: str) -> str:
-    bin_string = bin(int.from_bytes(input_string.encode(), 'big')).strip('0b')
+    bin_string = bin(int.from_bytes(input_string.encode(), 'big')).lstrip('0b')
     return bin_string
 
 
 def string_decoder(input_string: str) -> str:
-    bin_string = int(input_string, 2)
+    bin_start = '0b'
+    full_string = bin_start + input_string
+    print(full_string)
+    bin_string = int(full_string, 2)
     return bin_string.to_bytes((bin_string.bit_length() + 7) // 8, 'big').decode()
 
 
