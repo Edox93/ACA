@@ -1,12 +1,12 @@
-with open("damaged.jpg", "rb") as image:
-    with open('recovered.jpg', 'wb') as recovered_file:
-        chunk_count = 0
+i = 0
+with open('damaged.jpg', 'rb') as jpg:
+    with open('recover.jpg', 'wb') as new_jpg:
+
         while True:
-            chunk = image.read(1024)
-            chunk_count += 1
+            chunk = jpg.read(1024)
+            i += 1
             if not chunk:
                 break
-            if chunk_count % 3 == 0 and chunk_count != 0:
-                chunk = bytearray(chunk[::-1])
-            recovered_file.write(bytearray(chunk))
-
+            if i % 3 == 0:
+                chunk = chunk[::-1]
+            new_jpg.write(chunk)
