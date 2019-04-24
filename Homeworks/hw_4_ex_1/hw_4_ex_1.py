@@ -3,7 +3,6 @@ def text_to_braille(text_input):
     for char in text_input:
         value = letter_to_braille(char)
         for v in value:
-            charBraille = ''
             for f in v:
                 if f == 1:
                     charBraille = 'o'
