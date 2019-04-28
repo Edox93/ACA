@@ -1,21 +1,32 @@
-def typecheck(typee):
-    def wrap(function):
-        def valueChecker(*args):
-            for arg in args:
-                if type(arg) is not typee:
-                    print("Վօռի Եռռօռ")
-                    break
-
-            function(*args)
-
-        return valueChecker
-    return wrap
+from datetime import datetime
 
 
-@typecheck(str)
-def checkValues(a, b, c):
-    return "a, b, c"
+def my_decorator(func):
+    def wrapper():
+        start = datetime.now()
+        result = func
+        print(datetime.now() - start)
+        return result
+    return wrapper()
 
 
-if __name__ == '__main__':
-    checkValues('1', '2', 3)
+@my_decorator
+def one():
+   # start = datetime.now()
+    edgar = [number for number in range(10 ** 4) if number % 2 == 0]
+   # print(datetime.now() - start)
+    return edgar
+
+@my_decorator
+def two():
+   # start = datetime.now()
+    edgar = []
+    for number in range(10 ** 4):
+        if number % 2 == 0:
+            edgar.append(number)
+   # print(datetime.now() - start)
+    return edgar
+
+
+print(one())
+print(two())
